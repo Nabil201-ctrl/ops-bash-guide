@@ -1,11 +1,11 @@
-# 🦅 The Primitive to God-Tier Bash Mastery Guide
+# The Comprehensive Bash Guide
 
-Welcome. This guide is designed to take you from knowing nothing about the terminal to building your own cloud infrastructure automation. We break everything down to the "primitive level"—understanding *how* it works, not just memorizing commands.
+Welcome. This guide is designed to take you from knowing nothing about the terminal to building your own cloud infrastructure automation. We break everything down to the fundamental level—understanding *how* it works, not just memorizing commands.
 
 ---
 
 ## 📚 Table of Contents
-1.  **The Primitive Mindset**: Understanding the Shell
+1.  **Bit & Byte Mindset**: Understanding the Shell
 2.  **Level 1: Foundations**: Filesystem, Permissions & The "Everything is a File" Philosophy
 3.  **Level 2: Connectivity**: Networking, WiFi, Bluetooth, and DNS
 4.  **Level 3: System Control**: Mounts, Services, & Updates
@@ -13,12 +13,12 @@ Welcome. This guide is designed to take you from knowing nothing about the termi
 6.  **Level 5: Automation**: Scripting, Loops, & Cron
 7.  **Level 6: Infrastructure**: SSH, Firewalls, & Cloud Init
 8.  **Level 7: The Exam**: Projects & Diagnostics
-9.  **Level 8: The Debugger's Dungeon**: Advanced Troubleshooting challenges
+9.  **Level 8: Advanced Debugging**: Troubleshooting challenges
 
 ---
 
-## 🧠 1. The Primitive Mindset: Understanding the Shell
-Computers are dumb. They process `0`s and `1`s. The **Shell (Bash)** is the bridge between your human language and the computer's kernel.
+## 1. The Bit & Byte Mindset: Understanding the Shell
+Computers process specific instructions. They process `0`s and `1`s. The **Shell (Bash)** is the bridge between your human language and the computer's kernel.
 When you type `ls`, you aren't "looking" at a folder. You are asking a program called `ls` to read the directory file and print the names inside it to your screen (Standard Output).
 
 **Key Concept**:
@@ -38,7 +38,7 @@ Linux is a tree. It starts at `/` (Root).
 - `/dev`: Devices (Hard drives, mouse, webcam)
 
 ### Navigation & Manipulation
-| Command | Primitive Meaning | Example |
+| Command | Meaning | Example |
 | :--- | :--- | :--- |
 | `pwd` | "Where am I in the tree?" | `pwd` |
 | `cd` | "Move to branch X" | `cd /etc` |
@@ -57,7 +57,7 @@ Read (`r`=4), Write (`w`=2), Execute (`x`=1).
 - `chmod +x script.sh`: Make it executable (runnable program).
 - `chown user:group file`: Change the owner.
 
-**Primitive Exercise:**
+**Exercise:**
 1. Create a folder named `secret_base`.
 2. Create a file inside called `plans.txt`.
 3. Lock it so *only you* can read/write it (Hint: `chmod 600`).
@@ -239,7 +239,7 @@ If your script is broken, run it with `-x` to see every step.
 
 ---
 
-## 🎓 8. Level 7: The Exam (Mega-Edition)
+## 8. Level 7: The Exam
 
 ### Part 1: Fill in the Blanks (10 Questions)
 *Test your command memory.*
@@ -285,17 +285,17 @@ If your script is broken, run it with `-x` to see every step.
 
 ---
 
-## 🪲 9. Level 8: The Debugger's Dungeon
+## 9. Level 8: Advanced Debugging
 
-Welcome to the hardest part. Real-world scripting is mostly fixing broken things.
-I have created 3 evil scripts with hidden bugs. Can you fix them?
+Welcome to the final section. Real-world scripting is often about fixing broken things.
+I have created 3 faulty scripts with hidden bugs. Can you fix them?
 
 ### The Toolkit
 1. **Debug Mode**: Run with `bash -x script.sh` to see every line execute.
 2. **Error Codes**: Check `echo $?` after a command to see if it failed (non-zero output).
 3. **Existence Check**: Use `command -v [prog_name]` to see if a program is installed.
 
-### 💀 The Challenges
+### The Challenges
 
 #### Challenge 1: The Mystery Dependency
 This script fails immediately. Why?

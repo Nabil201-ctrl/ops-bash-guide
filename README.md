@@ -1,6 +1,6 @@
-# 🦅 The Primitive to God-Tier Bash Mastery Guide
+# The Ops Bash Guide
 
-Welcome to the **Ops Bash Guide**. This repository contains the resources for the "Primitive to God-Tier" curriculum, designed to take you from knowing nothing about the terminal to building your own cloud infrastructure automation.
+Welcome to the **Ops Bash Guide**. This repository contains resources designed to take you from a beginner to building your own cloud infrastructure automation.
 
 ## 📂 Contents
 
