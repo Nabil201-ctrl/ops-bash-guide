@@ -1,0 +1,42 @@
+#cloud-config
+
+# 1. Create Users
+users:
+  - name: deployer
+    gecos: Deploy User
+    sudo: ALL=(ALL) NOPASSWD:ALL # Give sudo power without password prompt
+    groups: users, admin
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc... (Your Public Key Here)
+
+# 2. Update the OS on first boot
+package_update: true
+package_upgrade: true
+
+# 3. Install Software
+packages:
+  - nginx
+  - git
+  - python3-pip
+
+# 4. Write Files (Configuration)
+# We create a custom welcome page for Nginx
+write_files:
+  - path: /var/www/html/index.html
+    content: |
+      <html>
+      <h1>This server was built by Automation!</h1>
+      </html>
+    owner: www-data:www-data
+    permissions: '0644'
+
+# 5. Run Commands (The Final Touch)
+# Executes shell commands after everything else is done
+runcmd:
+  - echo "System provisioning complete" >> /var/log/cloud-init-output.log
+  - systemctl restart nginx
+  # Security hardening: Turn on Firewall
+  - ufw allow 'Nginx Full'
+  - ufw allow 'OpenSSH'
+  - ufw enable
