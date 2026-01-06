@@ -8,7 +8,7 @@ echo "Checking network Connectivity ....."
 
 for i in "${ip_list[@]}";do
     echo "$i"
-    ping -c 4 "$i"
+    ping -co 4 "$i"
     echo "pinged ip addresses to check internet connection"
 done
 
